@@ -10,7 +10,7 @@ from django.shortcuts import render
 from django_bank_security.settings import TIME_ZONE
 
 
-def visit_duration(start_visit, end_visit):
+def get_visit_duration(start_visit, end_visit):
     start_visit = localtime(start_visit)
     if not end_visit:
         end_visit = datetime.now(pytz.timezone(TIME_ZONE))

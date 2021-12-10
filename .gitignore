@@ -1,8 +1,10 @@
 # Project
 .vscode/
+.idea/
 __pycache__/
 /static/
 media/
+
 # Byte-compiled / optimized / DLL files
 *.py[cod]
 *$py.class
