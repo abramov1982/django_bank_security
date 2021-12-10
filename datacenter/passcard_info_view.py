@@ -27,7 +27,6 @@ def visit_duration(start_visit, end_visit):
 
 def passcard_info_view(request, passcode):
     passcard = Passcard.objects.get(passcode=passcode)
-    # Программируем здесь
     passcard_visits = Visit.objects.filter(passcard_id=passcard.pk)
     this_passcard_visits = []
     for visit in passcard_visits:
