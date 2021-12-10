@@ -10,15 +10,14 @@ from django.shortcuts import render
 from django_bank_security.settings import TIME_ZONE
 
 
-def get_visit_duration(start_visit, end_visit):
+def get_visit_duration(start_visit, end_visit=None):
     start_visit = localtime(start_visit)
     if not end_visit:
-        end_visit = localtime(datetime.now())
+        end_visit = localtime()
     else:
         end_visit = localtime(end_visit)
 
     duration = end_visit - start_visit
-    print(duration.seconds)
 
     if duration > timedelta(minutes=60):
         return {'duration': duration, 'is_strange': True}
